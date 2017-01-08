@@ -6,6 +6,12 @@
   <%= f.input :author%>
   <h5>Category</h5>
   <%= f.select( :category_id, @categories,{}, {class: "form-control", id:"sel1" } )%>
+  <div class="input-group">
+    <span class="input-group-btn">
+      <span class="btn btn-small btn-primary btn-inverse" onclick="$(this).parent().find('input[type=file]').click();">Browse</span>
+      <%= f.file_field :book_img, onchange: "$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\\\|/]/).pop());", style: "display: none;" %>
+    </span>
+  </div>
   <%= f.button :submit %>
 
 <% end %>

@@ -1,8 +1,21 @@
-<h2><%= @book.title  %></h2>
-<h3><%= @book.author  %></h3>
-<h4>Category: <%= @book.category.name  %></h4>
+<div class="row">
+  <div class="col-md-4">
+    <%= image_tag @book.book_img.url(:book_show), class: "book_show" %>
+  </div>
+  <div class="col-md-4">
+    <h2><%= @book.title  %></h2>
+    <h3><%= @book.author  %></h3>
+    <p><%= @book.description  %></p>
+  </div>
+</div>
 
-<p><%= @book.description  %></p>
+<div class="row">
+  <div class="col-md-4">
+    
+  </div>
+
+</div>
+
 
 <% if user_signed_in? %>
 
